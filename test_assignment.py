@@ -29,6 +29,9 @@ class TestAssignment01(unittest.TestCase):
         data = readAllData(SHORT_FILE_NAME)
         average = computeAverageForClasses(data)
         result_data = {'YES': 12.654788940000001, 'NO': 19.13054132285714}
+        for key, value in result_data.items():
+            average[key] = int(average[key] * 1000000)
+            result_data[key] = int(result_data[key] * 1000000)
 
         self.assertEqual(average, result_data)
 
@@ -44,7 +47,9 @@ class TestAssignment01(unittest.TestCase):
         data = readAllData(COMPLETE_FILE_NAME)
         average = computeAverageForClasses(data)
         result_data = {'YES': 11.016275211379998, 'NO': 19.25457457829}
-
+        for key, value in result_data.items():
+            average[key] = int(average[key] * 1000000)
+            result_data[key] = int(result_data[key] * 1000000)
         self.assertEqual(average, result_data)
 
     def test_misclassified_complete(self):
@@ -58,7 +63,9 @@ class TestAssignment01(unittest.TestCase):
         data = readAllData(COMPLETE_FINAL_FILE_NAME)
         average = computeAverageForClasses(data)
         result_data = {'YES': 10.287209574866667, 'NO': 20.240770106972597, 'OK': 97.84553928928842}
-
+        for key, value in result_data.items():
+            average[key] = int(average[key] * 1000000)
+            result_data[key] = int(result_data[key] * 1000000)
         self.assertEqual(average, result_data)
 
     def test_misclassified_complete_final(self):
